@@ -1,6 +1,27 @@
 micronaut:
   application:
     name: micronautDemo
+
+  router:
+    static-resources:
+      default:
+        paths: classpath:static
+        mapping: /**
+
+  views:
+    thymeleaf:
+      enabled: true
+      character-encoding: UTF-8
+
+  server:
+    # File-upload upper limits
+    # See https://docs.micronaut.io/snapshot/guide/configurationreference.html
+    #   1M = 1048576 (1024L * 1024)
+    # 100M = 104857600
+    max-request-size: 104857600
+    multipart:
+      max-file-size: 104857600
+
 netty:
   default:
     allocator:
