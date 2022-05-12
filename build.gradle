@@ -22,6 +22,8 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
 
+    // FTP reader
+    implementation("commons-net:commons-net:3.8.0");
 }
 
 tasks.withType(JavaCompile){
