@@ -41,9 +41,8 @@ jobs:
           ECR_REPOSITORY: slallem-ecr
           IMAGE_TAG: latest
         run: |
-          env
-          #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+          docker tag -t $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
   verif:
