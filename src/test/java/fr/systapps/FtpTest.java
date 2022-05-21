@@ -5,14 +5,15 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-@MicronautTest
 class FtpTest {
 
+    @Disabled("Just an example, not really unit test")
     @Test
     void ftpReadTest() {
 
@@ -33,7 +34,7 @@ class FtpTest {
 
         System.out.println("Starting FTP Read test >>>");
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         FTPClient ftpClient = new FTPClient();
         try {
