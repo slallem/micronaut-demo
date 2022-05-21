@@ -45,8 +45,10 @@ jobs:
           docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-  verif:
-    runs-on: ubuntu-latest
-    steps:
-      - name: listing files test two
-        run: find build
+  #deploy:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Deployment to EKS
+  #      env:
+  #        DOCKER_IMAGE_URL: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
